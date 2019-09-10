@@ -11,6 +11,6 @@ def task_scheduler(tasks, cooldown):
     return slot
 
 if __name__ == '__main__':
-    tasks = [1, 2, 1, 1, 3, 4]
+    tasks = [1, 2, 1, 1, 3, 4, 4]
     cooldown = 2
     print(task_scheduler(tasks, cooldown))

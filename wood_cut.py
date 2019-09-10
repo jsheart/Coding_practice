@@ -2,7 +2,7 @@ def wood_cut(woods, k):
     right = max(woods)
     left = 0
     longest = 0
-    while left < right:
+    while left <= right:
         length = left + (right - left) // 2
         count = 0
         for wood in woods:

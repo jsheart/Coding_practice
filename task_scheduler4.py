@@ -31,6 +31,6 @@ def task_scheduler(tasks, cooldown):
     return ''.join(result)
 
 if __name__ == '__main__':
-    tasks = [1, 2, 1, 1, 2, 3, 4, 1, 2]
+    tasks = [1, 2, 1, 1, 2, 3, 4, 1, 2, 3]
     cooldown = 3
     print(task_scheduler(tasks, cooldown))

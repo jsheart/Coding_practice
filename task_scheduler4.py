@@ -11,13 +11,11 @@ def task_scheduler(tasks, cooldown):
     heapq.heapify(heap)
     cycle = cooldown + 1
     while heap:
-        count = 0
         idle = 0
         temp = []
         for _ in range(cycle):
             if heap:
                 temp.append(heapq.heappop(heap))
-                count += 1
             else:
                 idle += 1
         for task in temp:

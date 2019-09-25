@@ -1,0 +1,42 @@
+// A recursive function to compute all paths from 'u' to 'd'.
+// visited[] keeps track of vertices in current path.
+// path[] stores actual vertices and path_index is current
+// index in path[]
+void project::calcuAllPaths(vector<path*> &c, int u, int d, bool visited[], int ppath[], int &path_index)
+{
+	// Mark the current node and store it in path[]
+	visited[u] = true;
+	ppath[path_index] = u;
+	path_index++;
+
+	// If current vertex is same as destination, then print
+	// current path[]
+	if (u == d)
+	{
+		path * p = new path();
+		int currentNode = ppath[0];
+		for (int i = 1; i < path_index; i++) {
+			int previousNode = currentNode;
+			currentNode = ppath[i];
+
+			p->addLink(this->topo->getLink(previousNode, currentNode)->getId());
+			p->addSDpair(previousNode, currentNode);
+
+		}
+
+		c.push_back(p);
+
+	}
+	else // If current vertex is not destination
+	{
+		// Recur for all the vertices adjacent to current vertex
+		list<int>::iterator i;
+		for (i = adj[u].begin(); i != adj[u].end(); ++i)
+			if (!visited[*i])
+				calcuAllPaths(c, *i, d, visited, ppath, path_index);
+	}
+
+	// Remove current vertex from path[] and mark it as unvisited
+	path_index--;
+	visited[u] = false;
+}

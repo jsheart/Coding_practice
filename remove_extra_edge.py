@@ -63,6 +63,7 @@ if __name__ == '__main__':
 	node2.left = node4
 	remove_extra_edge_BT(root)
 	
+	
 	root = TreeNode(3)
 	node1 = TreeNode(2)
 	node2 = TreeNode(5)

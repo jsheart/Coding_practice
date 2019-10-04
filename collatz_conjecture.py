@@ -11,7 +11,6 @@ def collatz(num):
 	return step
 
 def find_collatz(num):
-	ans = 0
 	table = {}
 	for i in range(2, num + 1):
 		temp_res = 0
